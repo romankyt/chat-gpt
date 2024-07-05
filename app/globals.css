@@ -2,32 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Manrope:wght@200..800&display=swap");
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .logoText {
+    @apply text-white font-normal text-[9px] leading-[14px] font-sans;
   }
-}
+  .loginText {
+    @apply text-[#9095A1] font-bold text-[34px] leading-[48px] font-sans;
+  }
+  .formLabel {
+    @apply font-sans font-normal text-xs leading-5 text-[#FF56A5];
+  }
+  .linkText {
+    @apply font-sans font-normal text-xs leading-5 text-[#15ABFF];
+  }
+  .conversationTitle {
+    @apply font-sans font-normal text-base leading-5 text-white;
+  }
+  .chatTitle {
+    @apply font-sans font-normal text-base leading-6 text-white;
+  }
+  .botText {
+    @apply font-sans font-normal text-xs lg:text-sm leading-5 text-[#15ABFF];
+  }
+  .userText {
+    @apply font-sans font-normal text-xs  lg:text-sm leading-5 text-white;
+  }
+  .modalText {
+    @apply w-[65%] lg:w-[50%]  font-sans font-normal text-[12px] md:text-lg  lg:text-[22px] leading-10 text-center text-white;
+  }
+  .dateText {
+    @apply font-sans font-normal leading-4 text-[12px] text-[#171A1F];
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  .loader {
+    width: 79px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid #ddf3ff;
+    border-right-color: #6d31ed;
+    animation: l2 1s infinite linear;
+  }
+  @keyframes l2 {
+    to {
+      transform: rotate(1turn);
+    }
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .typingLoader {
+    width: 6px;
+    height: 6px;
+    -webkit-animation: line 1s linear infinite alternate;
+    -moz-animation: line 1s linear infinite alternate;
+    animation: line 1s linear infinite alternate;
+    justify-self: center;
+    align-self: center;
+  }
+  @-webkit-keyframes line {
+    0% {
+      background-color: rgba(21, 143, 255, 1);
+      box-shadow: 12px 0px 0px 0px rgba(21, 143, 255, 0.2),
+        24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    }
+    25% {
+      background-color: rgba(21, 143, 255, 0.4);
+      box-shadow: 12px 0px 0px 0px rgba(21, 143, 255, 2),
+        24px 0px 0px 0px rgba(21, 143, 255, 0.2);
+    }
+    75% {
+      background-color: rgba(21, 143, 255, 0.4);
+      box-shadow: 12px 0px 0px 0px rgba(21, 143, 255, 0.2),
+        24px 0px 0px 0px rgba(21, 143, 255, 2);
+    }
+  }
+
+  @-moz-keyframes line {
+    0% {
+      background-color: rgba(21, 143, 255, 1);
+      box-shadow: 12px 0px 0px 0px rgba(21, 143, 255, 0.2),
+        24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    }
+    25% {
+      background-color: rgba(21, 143, 255, 0.4);
+      box-shadow: 12px 0px 0px 0px rgba(21, 143, 255, 2),
+        24px 0px 0px 0px rgba(21, 143, 255, 0.2);
+    }
+    75% {
+      background-color: rgba(21, 143, 255, 0.4);
+      box-shadow: 12px 0px 0px 0px rgba(21, 143, 255, 0.2),
+        24px 0px 0px 0px rgba(21, 143, 255, 2);
+    }
+  }
+
+  @keyframes line {
+    0% {
+      background-color: rgba(21, 143, 255, 1);
+      box-shadow: 12px 0px 0px 0px rgba(21, 143, 255, 0.2),
+        24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    }
+    25% {
+      background-color: rgba(21, 143, 255, 0.4);
+      box-shadow: 12px 0px 0px 0px rgba(21, 143, 255, 2),
+        24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    }
+    75% {
+      background-color: rgba(21, 143, 255, 0.4);
+      box-shadow: 12px 0px 0px 0px rgba(21, 143, 255, 0.2),
+        24px 0px 0px 0px rgba(21, 143, 255, 2);
+    }
   }
 }
